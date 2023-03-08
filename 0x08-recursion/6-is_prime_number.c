@@ -21,7 +21,6 @@ int is_prime_number(int n)
  *
  * Returns: 1 for prime or 0 composite
  */
-
 int check_prime(int n, int i)
 {
 	if (n <= 1)
@@ -31,7 +30,7 @@ int check_prime(int n, int i)
 		return (0);
 
 	if ((n / i) < i)
-		return (i);
+		return (1);
 
 	return (check_prime(n, i + 1));
 }
