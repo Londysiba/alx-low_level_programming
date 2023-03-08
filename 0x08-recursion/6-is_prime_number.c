@@ -1,36 +1,50 @@
 #include "main.h"
-#include <stdio.h>
-
-int check_prime(int n, int i);
 
 /**
- * is_prime_number - Returns if a number is prime
- * @n: the number to be checked
- *
- * Return: integer value
+ * evaluate_num - recursion loop
+ * @num: num
+ * @iterator: number to iterate
+ * Return: return 1 or 0
  */
-int is_prime_number(int n)
+
+int evaluate_num(int num, int iterator)
 {
-	return (check_prime(n, 1));
+	if (iterator == num - 1)
+	{
+		return (1);
+	}
+	else if (num % iterator == 0)
+	{
+		return (0);
+	}
+	if (num % iterator != 0)
+	{
+		return (evaluate_num(num, iterator + 1));
+	}
+	return (0);
 }
 
 /**
- * check_prime - Check if number is prime
- * @n: the number to be checked
- * @i: the iteration times
- *
- * Returns: 1 for prime or 0 composite
+ * is_prime_number - evaluate prime or not
+ * @num: nimber
+ * Return: return 1 prime - return 0 otherwise
  */
-int check_prime(int n, int i)
+
+int is_prime_number(int num)
 {
-	if (n <= 1)
-		return (0);
+	int iterator;
 
-	if (n % i == 0 && i > 1)
-		return (0);
+	iterator = 2;
 
-	if ((n / i) < i)
+	/* only greater than 2*/
+	if (num < 2)
+	{
+		return (0);
+	}
+	if (num == 2)
+	{
 		return (1);
+	}
 
-	return (check_prime(n, i + 1));
+	return (evaluate_num(num, iterator));
 }
