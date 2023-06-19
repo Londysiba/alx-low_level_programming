@@ -1,9 +1,7 @@
-#include <stdio.h>
 #include "lists.h"
 
 /**
  * print_dlistint - prints all the elements of a dlistint_t list
- * 
  * Return: the number of nodes
 */
 
