@@ -32,5 +32,6 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int index)
 		free(temp);
 		return (1);
 	}
+
 	return (-1);
 }
