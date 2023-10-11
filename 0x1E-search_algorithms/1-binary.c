@@ -1,6 +1,12 @@
 #include "search_algos.h"
 
 /**
+ * linear_search - searches for a value in a sorted array of integers
+ * @array: array of integers
+ * @size: size of array
+ * @value: value to search for
+ * Return: index of value or -1 if not found
+ * 
  * A function that searches for a value in a sorted array 
  * of integers using the Binary search algorithm
 */
